@@ -1,0 +1,7 @@
+{
+	"files.associations": {
+		"ratio": "c",
+		"push_swap.h": "c"
+	},
+	"git.ignoreLimitWarning": true
+}

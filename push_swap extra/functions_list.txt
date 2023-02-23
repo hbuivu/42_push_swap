@@ -1,0 +1,20 @@
+detect_non_num -
+detect_space - 
+detect_duplicate - 
+split_list_add
+free_list
+free_split_list
+ft_split
+ft_atoi
+ft_calloc
+
+creating linked list a
+-> create a circular list and make it two ways
+
+
+ERRORS:
+1. non_numerical characters
+2. negative after number
+3. duplicate number
+4. exceeds int max/min
+5. space only

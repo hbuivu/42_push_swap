@@ -1,0 +1,137 @@
+Cases:
+DISPLAY NOTHING:
+numbers are already sorted - check_sort
+only 1 number -> check_for_one
+no inputs -> !*list
+
+3 numbers
+3 moves max (2 is nice)
+
+5 numbers
+12 moves max (8 is nice)
+
+100 numbers
+5: less than 700 moves
+4: less than 900 moves
+3: less than 1100 moves
+
+500 numbers
+5: less than 5500 moves
+4: less than 7000 moves
+3: less than 8500 moves
+
+rotate - a , b , r
+swap - 	a , b, s
+push - 	a , b
+
+TO DO:
+function to check for one;
+
+//split into buckets 
+	//2 5-99
+	//3 for 100-199
+	//4 for 200-299
+	//5 for 300-399
+	//6 for 400-499
+	//7 for 500-599
+//find the correct pivot
+	//first use the range to approximate a pivot point
+	//count the numbers that fall within that range to see if it's the correct pivot
+	//reduce or increase numbers based on number count
+	//OR
+	//sort the numbers into an invisible array
+	//pinpoint the pivots that way
+//work from top and bottom
+	//check top first then check bottom
+	//everytime something is pushed, start again from either ends
+//presort 
+	//while pushing, also sort b by pushing the smaller numbers to the bottom
+
+final sort
+	keep track of min and max in a;
+
+	if min is at position 0 (normal shape)
+		calculate moves - 4 from top and bottom are sufficient 
+		numbers that are calculated must be in range of half bucket
+			find index of insertion normally from top to bottom;
+	if top position is greater than min
+		calculate moves based on below and shape;
+			if num is < top and num is < bottom
+				find index of insertion from the bottom;
+			
+	if index_a > mid, start from bottom
+	if index_a < = mid, start from top
+	while bottom number is greater than insert number
+		rra and rrb accordingly
+	while top number is greater than insert number
+		ra and rb accordingly
+	push num;
+	//repeat this for every half bucket; 
+	(while bottom || top of b is in range of half bucket)
+	number of repeats of each cycle is buckets * 2
+
+How to calculate moves
+moves = moves_a + moves_b
+if (index_b > mid_b && index_a > mid_a)
+	moves_b = len_b - index_b
+	moves_a = len_a - index_a
+	while (moves_a && moves_b)
+		rrr
+		moves_a--;
+		moves_b--;
+	while (moves_a)
+		rra
+		moves_a--;
+	while (moves_b)
+		rrb;
+		moves_b--;
+	moves_count ->
+		if moves_a >= moves_b 
+			moves_count = moves_a
+		else if moves_a < moves_b
+			moves_count = moves_b
+if (index_b > mid_b && index_a <= mid_a)
+	moves_b = len_b - index_b
+	moves_a = index_a
+	while(moves_a)
+		ra
+		moves_a--;
+	while(moves_b)
+		rrb
+		moves_b--;
+	move_count = moves_a + moves_b;
+if (index_b <= mid_b && index_a > mid_a)
+	moves_b = index_b;
+	moves_a = len_a - index_a;
+	while(moves_a)
+		rra
+		moves_a--
+	while(moves_b)
+		rb
+		moves_b--;
+	move_count = moves_a + moves_b;
+if (index_b <= mid_b && index_a <= mid_a)
+	moves_a = index_a;
+	moves_b = index_b;
+	while(moves_a && moves_b)
+		rr;
+		moves_a--;
+		moves_b--;
+	while(moves_a)
+		ra
+		moves_a--;
+	while(moves_b)
+		rb
+		moves--;
+	if moves_a >= moves_b 
+			moves_count = moves_a
+		else if moves_a < moves_b
+			moves_count = moves_b
+
+TO DO:
+in the push function, freeing doesn't take into account d and m
+
+
+	
+
+
