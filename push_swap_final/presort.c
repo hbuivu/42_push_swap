@@ -55,7 +55,7 @@ void	push_to_b(t_nlist **list_a, t_nlist **list_b, t_data *d)
 	{
 		if (in_range(d->top->num, d, 'p') == 1)
 			push_num(list_a, list_b, d, 't');
-		else if (in_range(d->top->num, d, 'p' == 1))
+		else if (in_range(d->top->num, d, 'p') == 1)
 			push_num(list_a, list_b, d, 'b');
 		else
 		{
